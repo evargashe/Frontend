@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { CgMathPlus } from "react-icons/cg";
+import ModalAgregarMedico from "../components/ModalAgregarMedico"; // Importar el componente Modal
 
 const Medicos = () => {
   const [medicos, setMedicos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    id_medico: "",
+    nombre: "",
+    apellido: "",
+    dni: "",
+    fecha_nac: "",
+    email: "",
+    telefono: "",
+    direccion: "",
+    especialidad: "",
+    turno: "",
+    sueldo: "",
+  });
 
   useEffect(() => {
     setMedicos([
@@ -18,7 +33,7 @@ const Medicos = () => {
         telefono: "1234567890",
         direccion: "Av. Principal 123",
         especialidad: "Cardiología",
-        turnos_disponibles: ["Lunes 9-13", "Miércoles 14-18"],
+        turno: "Lunes 9-13",
         sueldo: 5000,
       },
       {
@@ -31,7 +46,7 @@ const Medicos = () => {
         telefono: "0987654321",
         direccion: "Calle Secundaria 456",
         especialidad: "Pediatría",
-        turnos_disponibles: ["Martes 9-13", "Jueves 14-18"],
+        turno: "Martes 9-13",
         sueldo: 4500,
       },
     ]);
@@ -47,6 +62,19 @@ const Medicos = () => {
     medico.dni.includes(searchTerm)
   );
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="p-4">
       <div className="flex flex-col items-start mb-4 border border-gray-300 rounded p-4">
@@ -54,11 +82,21 @@ const Medicos = () => {
       </div>
       <div className="flex justify-between items-center mb-4 border border-gray-300 rounded p-4">
         <h1 className="font-bold">Listado de Médicos</h1>
-        <button className="inline-flex items-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        <button
+          onClick={handleOpenModal}
+          className="inline-flex items-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
           <CgMathPlus className="mr-2" />
           Nuevo Médico
         </button>
       </div>
+
+      <ModalAgregarMedico
+        showModal={showModal}
+        handleCloseModal={handleCloseModal}
+        formData={formData}
+        handleInputChange={handleInputChange}
+      />
       <div className="border border-gray-300 rounded p-4">
         <div className="mb-4">
           <input

@@ -7,6 +7,7 @@ import Medicos from "./pages/Medicos"
 import Servicios from "./pages/Servicios"
 import Consultas from "./pages/Consultas"
 import Facturacion from "./pages/Facturacion"
+import RealizacionExamen from "./pages/RealizacionExamen"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/servicios" element={<Servicios />} />
               <Route path="/consultas" element={<Consultas />} />
               <Route path="/facturacion" element={<Facturacion />} />
+              <Route path="/realizar-servicios" element={<RealizacionExamen />} />
             </Routes>
           </div>
         </main>

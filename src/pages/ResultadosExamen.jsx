@@ -86,10 +86,13 @@ const MantenimientoResultados = () => {
             ) : (
                 <div>
                     <div className="mb-4 border p-4">
-                        <h1 className="text-2xl font-bold">Registrar Resultado</h1>
+                        <h1 className="text-2xl font-bold">Registro de Resultados</h1>
                     </div>
 
                     <div className="border border-gray-300 rounded p-4">
+                        <div className="mb-4 border p-4">
+                            <h2 className="text-1xl font-bold">Registrar Resultado de Examen</h2>
+                        </div>
 
                         <div className="mb-4">
                             <div className="flex items-center mb-2">

@@ -31,12 +31,11 @@ const RealizacionExamen = () => {
 
     return (
         <div className="p-4">
-            <div className="flex flex-col items-start mb-4 border border-gray-300 rounded p-4">
-                <h2 className="text-2xl font-bold">Mantenimiento de Realizar Examen</h2>
-            </div>
             {!showForm ? (
                 <>
-
+                    <div className="flex flex-col items-start mb-4 border border-gray-300 rounded p-4">
+                        <h2 className="text-2xl font-bold">Mantenimiento de Realizar Examen</h2>
+                    </div>
                     <div className="flex justify-between items-center mb-4 border border-gray-300 rounded p-4">
                         <h1 className="font-bold">Listado de Examenes realizados</h1>
                         <button
@@ -98,62 +97,68 @@ const RealizacionExamen = () => {
                     </div>
                 </>
             ) : (
-                <div className="border border-gray-300 rounded p-4">
-                    <div className="mb-4 border p-4">
-                        <h1 className="text-2xl font-bold">Registrar Examenes Paciente</h1>
+                <>
+                    <div className="flex flex-col items-start mb-4 border border-gray-300 rounded p-4">
+                        <h1 className="text-2xl font-bold">Registro Realizar Examen</h1>
                     </div>
 
-                    <div className="mb-4">
-                        <div className="flex items-center mb-4">
-                            <input
-                                type="text"
-                                placeholder="DNI Paciente"
-                                className="border px-4 py-2 rounded w-1/3 mr-2"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Paciente"
-                                className="border px-4 py-2 rounded w-2/3"
-                            />
-                            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Buscar</button>
+                    <div className="border border-gray-300 rounded p-4">
+                        <div className="mb-4 border p-4">
+                            <h2 className="text-1xl font-bold">Registrar Examenes Paciente</h2>
                         </div>
 
-                        <div className="flex items-center mb-4">
-                            <input
-                                type="text"
-                                placeholder="DNI Médico"
-                                className="border px-4 py-2 rounded w-1/3 mr-2"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Médico"
-                                className="border px-4 py-2 rounded w-2/3"
-                            />
-                            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Buscar</button>
+                        <div className="mb-4">
+                            <div className="flex items-center mb-4">
+                                <input
+                                    type="text"
+                                    placeholder="DNI Paciente"
+                                    className="border px-4 py-2 rounded w-1/3 mr-2"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Paciente"
+                                    className="border px-4 py-2 rounded w-2/3"
+                                />
+                                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Buscar</button>
+                            </div>
+
+                            <div className="flex items-center mb-4">
+                                <input
+                                    type="text"
+                                    placeholder="DNI Médico"
+                                    className="border px-4 py-2 rounded w-1/3 mr-2"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Médico"
+                                    className="border px-4 py-2 rounded w-2/3"
+                                />
+                                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Buscar</button>
+                            </div>
+
+                            <div className="flex items-center mb-4">
+                                <input
+                                    type="text"
+                                    placeholder="Análisis"
+                                    className="border px-4 py-2 rounded w-2/3 mr-2"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Examen"
+                                    className="border px-4 py-2 rounded w-2/3"
+                                />
+                                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Agregar</button>
+                            </div>
                         </div>
 
-                        <div className="flex items-center mb-4">
-                            <input
-                                type="text"
-                                placeholder="Análisis"
-                                className="border px-4 py-2 rounded w-2/3 mr-2"
-                            />
-                            <input
-                                type="text"
-                                placeholder="Examen"
-                                className="border px-4 py-2 rounded w-2/3"
-                            />
-                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Agregar</button>
-                        </div>
+                        <button
+                            onClick={handleRegistrarExamen}
+                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
+                        >
+                            Registrar Realización Exámenes
+                        </button>
                     </div>
-
-                    <button
-                        onClick={handleRegistrarExamen}
-                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full"
-                    >
-                        Registrar Realización Exámenes
-                    </button>
-                </div>
+                </>
             )}
         </div>
     );

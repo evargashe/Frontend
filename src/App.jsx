@@ -9,6 +9,8 @@ import Consultas from "./pages/Consultas"
 import Facturacion from "./pages/Facturacion"
 import RealizacionExamen from "./pages/RealizacionExamen"
 import ResultadosExamen from "./pages/ResultadosExamen"
+import Proforma from "./pages/Proforma"
+
 function App() {
   return (
     <Router>
@@ -30,6 +32,7 @@ function App() {
               <Route path="/facturacion" element={<Facturacion />} />
               <Route path="/realizar-servicios" element={<RealizacionExamen />} />
               <Route path="/resultados-servicios" element={<ResultadosExamen />} />
+              <Route path="/proforma" element={<Proforma />} />
 
             </Routes>
           </div>

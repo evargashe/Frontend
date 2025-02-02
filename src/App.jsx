@@ -10,6 +10,8 @@ import Facturacion from "./pages/Facturacion"
 import RealizacionExamen from "./pages/RealizacionExamen"
 import ResultadosExamen from "./pages/ResultadosExamen"
 import Proforma from "./pages/Proforma"
+import Roles from './pages/Roles'
+import Usuario from './pages/Usuario'
 
 function App() {
   return (
@@ -33,6 +35,9 @@ function App() {
               <Route path="/realizar-servicios" element={<RealizacionExamen />} />
               <Route path="/resultados-servicios" element={<ResultadosExamen />} />
               <Route path="/proforma" element={<Proforma />} />
+              <Route path="/usuario" element={<Usuario />} />
+              <Route path="/roles" element={<Roles />} />
+
 
             </Routes>
           </div>
